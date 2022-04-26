@@ -1,0 +1,125 @@
+# Module: zeek
+# Docs: https://www.elastic.co/guide/en/beats/filebeat/8.1/filebeat-module-zeek.html
+
+- module: zeek
+  capture_loss:
+    enabled: true
+    var.paths: /*.log
+  connection:
+    enabled: true
+    var.paths: /*.log
+  dce_rpc:
+    enabled: true
+    var.paths: /*.log
+  dhcp:
+    enabled: true
+    var.paths: /*.log
+  dnp3:
+    enabled: true
+    var.paths: /*.log
+  dns:
+    enabled: true
+    var.paths: /*.log
+  dpd:
+    enabled: true
+    var.paths: /*.log
+  files:
+    enabled: true
+    var.paths: /*.log
+  ftp:
+    enabled: true
+    var.paths: /*.log
+  http:
+    enabled: true
+    var.paths: /*.log
+  intel:
+    enabled: true
+    var.paths: /*.log
+  irc:
+    enabled: true
+    var.paths: /*.log
+  kerberos:
+    enabled: true
+    var.paths: /*.log
+  modbus:
+    enabled: true
+    var.paths: /*.log
+  mysql:
+    enabled: true
+    var.paths: /*.log
+  notice:
+    enabled: true
+    var.paths: /*.log
+  ntp:
+    enabled: true
+    var.paths: /*.log
+  ntlm:
+    enabled: true
+    var.paths: /*.log
+  ocsp:
+    enabled: true
+    var.paths: /*.log
+  pe:
+    enabled: true
+    var.paths: /*.log
+  radius:
+    enabled: true
+    var.paths: /*.log
+  rdp:
+    enabled: true
+    var.paths: /*.log
+  rfb:
+    enabled: true
+    var.paths: /*.log
+  signature:
+    enabled: true
+    var.paths: /*.log
+  sip:
+    enabled: true
+    var.paths: /*.log
+  smb_cmd:
+    enabled: true
+    var.paths: /*.log
+  smb_files:
+    enabled: true
+    var.paths: /*.log
+  smb_mapping:
+    enabled: true
+    var.paths: /*.log
+  smtp:
+    enabled: true
+    var.paths: /*.log
+  snmp:
+    enabled: true
+    var.paths: /*.log
+  socks:
+    enabled: true
+    var.paths: /*.log
+  ssh:
+    enabled: true
+    var.paths: /*.log
+  ssl:
+    enabled: true
+    var.paths: /*.log
+  stats:
+    enabled: true
+    var.paths: /*.log
+  syslog:
+    enabled: true
+    var.paths: /*.log
+  traceroute:
+    enabled: true
+    var.paths: /*.log
+  tunnel:
+    enabled: true
+    var.paths: /*.log
+  weird:
+    enabled: true
+    var.paths: /*.log
+  x509:
+    enabled: true
+    var.paths: /*.log
+
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:

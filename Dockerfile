@@ -57,11 +57,15 @@ RUN ln -s /usr/local/zeek-${VER} /zeek
 #ADD ./common/bro_profile.sh /etc/profile.d/zeek.sh
 COPY --from=builder /usr/local/bro_profile.sh /etc/profile.d/zeek.sh
 
-# Filbeat install section:#########################################
+# Filebeat install section:#########################################
 RUN apt-get update && apt-get -y install --no-install-recommends curl dpkg ca-certificates
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.1.3-amd64.deb
-RUN sudo dpkg -i filebeat-8.1.3-amd64.deb
+RUN dpkg -i filebeat-8.1.3-amd64.deb
 RUN filebeat modules enable zeek
+
+# Filebeat config:
+# Change zeek module to enable all logtypes and read logs from our output dir root(/):
+RUN sed -i 's/enabled: false/enabled: true\n    var.paths: \/*.log/g' ./zeek-docker/zeek.yml
 
 # COPY process_pcap.sh for watching for new pcap files:
 COPY process_pcap.sh /process_pcap.sh 
